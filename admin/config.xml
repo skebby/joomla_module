@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install PUBLIC "-//NEONEVIS//DTD component 1.0//EN" "http://www.neonevis.it/dtd/nncomponent-install.dtd">
+<config>
+  <fields addpath="/administrator/components/com_skebby/elements">
+
+     <fieldset name="sms" label="Parametri SMS">      
+       <field name="sms_username" type="text" label="Username" description="Unsername di resgistrazione a Skebby.it" size="80"></field>      
+       <field name="sms_password" type="password" label="Password" description="Password di accesso a Skebby.it" size="80"></field>
+       <field name="sms_tipo" type="list" default="Basic" label="Tipologia di servizio" description="Seleziona la tipologia di servizio di Invio SMS (vedi help per le note o il wito www.skebby.it)">
+        <option value="basic">Basic</option>
+        <option value="classic">Classic</option>
+        <option value="classic_plus">Classic Plus</option>
+        <option value="test_basic">TEST Debug Basic</option>
+        <option value="test_classic">TEST Debug Classic</option>
+        <option value="test_classic_plus">TEST Debug Classic Plus</option>        
+       </field>
+       <field name="sms_charset" type="list" default="" label="CHARSET ?" description="Specifica ils et di caratteri CHARSET: UTF-8 o ISO-8859-1. Se non sei sicuro lascia Ignoto.">
+         <option value="">Ignoto</option>
+         <option value="UTF-8">UTF-8</option>
+         <option value="ISO-8859-1">ISO-8859-1</option>
+       </field>          
+       <field name="sms_tipo_mit" type="list" default="Numerico" label="Tipologia di mittente" description="Seleziona la tipologia di mittente che appare al ricevente (Solo versione SMS Classic e SMS Classic PLUS) )">
+        <option value="Numerico">Numerico</option>
+        <option value="Testo">Testuale</option>
+       </field>
+       <field name="sender_number" type="text" label="N°di chi invia" description="N° di cel di chi invia che appare al ricevente, alternativo a nome di invia e/o al referente" size="80"></field>
+       <field name="sender_string" type="text" label="Nome di Chi Invia" description="Nome che appare al ricevente, alternativo al n° cel. di invia e/o al referente" size="80" maxlength="11"></field>
+     </fieldset>
+     
+    <fieldset name="display" label="Blocco Generale">
+       <field name="crediti" type="radio" default="0" label="Mostra Credits" description="Mostra/nasconde i credits sul front-end.">
+         <option value="0">No</option>
+         <option value="1">Si</option>
+       </field>
+       <field name="flag_email_admin" type="radio" default="1" label="Invia mail all'amministratore" description="Abilita l'invio della mail agli amministratori dell'anagrafica.">
+         <option value="0">No</option>
+         <option value="1">Si</option>
+       </field>          
+       <field name="email_admin" type="text" label="Indir. Email dell'amministratore" description="Indicare l'indirizzo/indirizzi email dell'amministratore dell'anagrafica a cui inviare le segnalazioni separati da punto e virgola (;)." size="20">
+       </field>
+       <field name="flag_debug_mode" type="radio" default="0" label="Attiva il Debug Mode" description="Abilita/Disabilita la visualizzazione degli errori di php.">
+         <option value="0">No</option>
+         <option value="1">Si</option>
+       </field>         
+    </fieldset> 
+        
+    <fieldset name="permessi" description="Configurazione Permessi" label="Configurazione Permessi">
+			 <field name="rules" type="rules" component="com_skebby" filter="rules" label="Permessi" section="component" description=""/>
+		 </fieldset>
+		 
+  </fields>
+</config>

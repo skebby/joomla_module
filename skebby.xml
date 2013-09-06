@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install PUBLIC "-//NEONEVIS//DTD component 1.0//EN" "http://www.neonevis.it/dtd/nncomponent-install.dtd">
+<extension type="component" version="2.5.0" method="upgrade">
+  <name>Skebby</name>
+  <creationDate>2013-07-31</creationDate>
+  <author>L. Migliorino</author>
+  <authorEmail>info@neonevis.it</authorEmail>
+  <authorUrl>http://www.neonevis.it</authorUrl>
+  <copyright>Copyright 2013 Neonevis Srl - All rights reserved</copyright>
+  <license>Released under GNU/GPL v3</license>  
+  <version>2.0.2</version>
+  <description>Componente per l'nvio SMS tramite il servizio Skebby.it .</description>
+
+  <uninstall>
+    <sql>
+      <file driver="mysql" charset="utf8">uninstall.mysql.utf8.sql</file>
+    </sql>
+  </uninstall>  
+  
+  <installfile>install.skebby.php</installfile>
+	<uninstallfile>uninstall.skebby.php</uninstallfile>
+
+  <files folder="site">
+    <filename>index.html</filename>
+  </files>
+  	
+	<scriptfile>script.php</scriptfile>
+
+    <administration>
+			<menu img="components/com_skebby/assets/icons/skebby.png" link="option=com_skebby">SMS SKEBBY</menu>
+	    <submenu>
+	      <menu img="components/com_skebby/assets/icons/skebby.png" view="cpanel" link="option=com_skebby&amp;view=cpanel">PANNELLO_DI_CONTROLLO</menu>
+        <menu img="components/com_skebby/assets/icons/icon-16-tools.png" view="tools" link="option=com_skebby&amp;task=tools">TOOLS</menu>
+	    </submenu>
+    
+			<files folder="admin">
+			    <filename>access.xml</filename>
+				  <filename>admin.skebby.php</filename>
+			    <filename>config.xml</filename>
+			    <filename>controller.php</filename>
+			    <filename>index.html</filename>
+		      <filename>install.mysql.utf8.sql</filename>
+		      <filename>uninstall.mysql.utf8.sql</filename>			    			    
+			    <folder>assets</folder>
+			    <folder>models</folder>
+          <folder>tables</folder>			    
+			    <folder>views</folder>
+	    </files>
+    </administration>
+
+   <!-- UPDATESERVER DEFINITION -->
+   <updateservers>
+      <server type="extension" priority="1" name="Com Skebby Update Site">http://www.neonevis.it/components_help/com_skebby-update.xml</server>
+   </updateservers>
+    
+</extension>
